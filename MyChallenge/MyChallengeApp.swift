@@ -12,7 +12,7 @@ import SwiftUI
 struct MyChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BrandDetailsView()
         }
     }
 }
