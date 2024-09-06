@@ -27,6 +27,8 @@
 		FD7EDEED2C8A278900050241 /* Estedad-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD7EDEEA2C8A278900050241 /* Estedad-Medium.ttf */; };
 		FD7EDEEE2C8A278900050241 /* Developers.json in Resources */ = {isa = PBXBuildFile; fileRef = FD7EDEEB2C8A278900050241 /* Developers.json */; };
 		FD7EDEF42C8A304300050241 /* Font+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDEF32C8A304300050241 /* Font+Modifier.swift */; };
+		FD7EDEF62C8A4A7200050241 /* CornerRadius+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDEF52C8A4A7200050241 /* CornerRadius+Modifier.swift */; };
+		FD7EDEF82C8B09FB00050241 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDEF72C8B09FB00050241 /* ProductCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		FD7EDEEB2C8A278900050241 /* Developers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Developers.json; sourceTree = "<group>"; };
 		FD7EDEF02C8A290400050241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD7EDEF32C8A304300050241 /* Font+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Modifier.swift"; sourceTree = "<group>"; };
+		FD7EDEF52C8A4A7200050241 /* CornerRadius+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Modifier.swift"; sourceTree = "<group>"; };
+		FD7EDEF72C8B09FB00050241 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7EDEDF2C8A26DC00050241 /* BrandDetailsView.swift */,
+				FD7EDEF72C8B09FB00050241 /* ProductCardView.swift */,
 				FD7EDEE12C8A26F200050241 /* ProductDetailsView.swift */,
 				FD7EDEF12C8A301A00050241 /* Util */,
 			);
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7EDEF32C8A304300050241 /* Font+Modifier.swift */,
+				FD7EDEF52C8A4A7200050241 /* CornerRadius+Modifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -331,7 +337,9 @@
 				FD7EDECC2C8A19CA00050241 /* ProductDetailsResponse.swift in Sources */,
 				FD7EDEF42C8A304300050241 /* Font+Modifier.swift in Sources */,
 				FD7EDEE42C8A271600050241 /* AppContainer.swift in Sources */,
+				FD7EDEF62C8A4A7200050241 /* CornerRadius+Modifier.swift in Sources */,
 				FD7EDEE22C8A26F200050241 /* ProductDetailsView.swift in Sources */,
+				FD7EDEF82C8B09FB00050241 /* ProductCardView.swift in Sources */,
 				FD7EDEE02C8A26DC00050241 /* BrandDetailsView.swift in Sources */,
 				FD7EDEDA2C8A262B00050241 /* BrandDetailsViewModel.swift in Sources */,
 				FD7EDED42C8A24EB00050241 /* FetchBrandDetailsUseCase.swift in Sources */,
@@ -495,6 +503,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +534,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

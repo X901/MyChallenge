@@ -12,7 +12,7 @@ import Foundation
 struct ProductDetailsResponse: Codable {
     let status: Int
     let success: Bool
-    let data: Product
+    let data: ProductDetails
 
     enum CodingKeys: String, CodingKey {
         case status
@@ -22,7 +22,7 @@ struct ProductDetailsResponse: Codable {
 }
 
 // MARK: - DataClass
-struct Product: Codable {
+struct ProductDetails: Codable {
     let id: Int
     let name: String
     let description: String

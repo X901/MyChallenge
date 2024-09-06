@@ -12,7 +12,7 @@ import Foundation
 struct BrandDetailsResponse: Codable {
     let status: Int
     let success: Bool
-    let data: [Datum]
+    let data: [BrandDetailsData]
     let cursor: Cursor
 
     enum CodingKeys: String, CodingKey {
@@ -35,7 +35,7 @@ struct Cursor: Codable {
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct BrandDetailsData: Codable {
     let id: String
     let name: String
     let description: String?
@@ -47,7 +47,7 @@ struct Datum: Codable {
     let soldQuantity: Int?
     let isTaxable: Bool
     let category: Category
-    let image: Image
+    let image: ImageObject
     let brand: Brand
     let tags: [Category]
     let isOnSale: Bool
@@ -118,7 +118,7 @@ struct Category: Codable {
 }
 
 // MARK: - Image
-struct Image: Codable {
+struct ImageObject: Codable {
     let url: String
 
     enum CodingKeys: String, CodingKey {
