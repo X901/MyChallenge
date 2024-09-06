@@ -23,7 +23,8 @@ class LocalAppConfigRepository: DeveloperAppConfigRepository {
         
         UserDefaults.standard.set(config.appColor, forKey: "appColor")
         UserDefaults.standard.set(config.fontFamily, forKey: "fontFamily")
-
+        UserDefaults.standard.synchronize()
+        
         return config
     }
 }

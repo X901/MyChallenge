@@ -87,21 +87,11 @@ struct ProductCardView: View {
                 }
                 
                 if offer != "" {
-                    Group {
-                        Rectangle()
-                            .fill(appColor.colorFromARGB())
-                            .frame(width: 140, height: 25)
-                        
-                        Text(offer)
-                            .foregroundColor(.white)
-                            .applyDynamicFont(size: 12)
-                            .lineLimit(1)
-                            .frame(width: 100)
-                        
-                        
-                    }
-                    .rotationEffect(Angle(degrees: -45))
-                    .offset(x: -55, y: -70)
+                    OfferView(title: offer,
+                              color: appColor.colorFromARGB(),
+                              size: CGSize(width: 140, height: 25))
+                              .offset(x: -55, y: -70)
+
                 }
             }
             .clipped()
@@ -116,4 +106,26 @@ struct ProductCardView: View {
                     subtitle: "عرض خاص",
                     price: 100.0,
                     offer: "تخفيض")
+}
+
+struct OfferView: View {
+    let title: String
+    let color: Color
+    var fontSize: CGFloat = 12
+    let size: CGSize
+
+    var body: some View {
+        Group {
+            Rectangle()
+                .fill(color)
+                .frame(width: size.width, height: size.height)
+
+            Text(title)
+                .foregroundColor(.white)
+                .applyDynamicFont(size: fontSize)
+                .lineLimit(1)
+                .frame(width: 100)
+        }
+        .rotationEffect(Angle(degrees: -45))
+    }
 }
