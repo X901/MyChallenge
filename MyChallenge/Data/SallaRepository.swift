@@ -8,3 +8,19 @@
 
 import Foundation
 
+protocol SallaRepository {
+    func fetchBrandProducts(pageURL: String?) async throws -> BrandDetails
+}
+
+class SallaRepositoryIml: SallaRepository {
+    private let networkService: NetworkServiceProtocol
+    
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
+    }
+    
+    func fetchBrandProducts(pageURL: String?) async throws -> BrandDetails {
+        return try await networkService.fetchBrandProduct(pageURL: pageURL)
+    }
+    
+}

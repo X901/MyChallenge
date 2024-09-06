@@ -8,30 +8,31 @@
 
 import SwiftUI
 
-struct EstedadMediumModifier: ViewModifier {
+struct DynamicFontModifier: ViewModifier {
     var size: CGFloat
+    var fontFamily: String
     
     func body(content: Content) -> some View {
-        content
-            .font(.custom("Estedad-Medium", size: size))
-    }
-}
-
-struct DINNextLTArabicModifier: ViewModifier {
-    var size: CGFloat
-    
-    func body(content: Content) -> some View {
-        content
-            .font(.custom("DINNextLTArabic-Regular", size: size))
+        let fontName: String
+        
+        switch fontFamily.lowercased() {
+        case "dinnextltarabic-regular":
+            fontName = "DINNextLTArabic-Regular"
+        case "estedad-medium":
+            fontName = "Estedad-Medium"
+        default:
+            fontName = "System"
+        }
+        
+        return content.font(.custom(fontName, size: size))
     }
 }
 
 extension View {
-    func medium(size: CGFloat = 20) -> some View {
-        self.modifier(EstedadMediumModifier(size: size))
-    }
-    
-    func regular(size: CGFloat = 20) -> some View {
-        self.modifier(DINNextLTArabicModifier(size: size))
+    func applyDynamicFont(size: CGFloat = 20) -> some View {
+
+        let fontFamily = UserDefaults.standard.string(forKey: "font_family") ?? "system"
+        
+        return self.modifier(DynamicFontModifier(size: size, fontFamily: fontFamily))
     }
 }

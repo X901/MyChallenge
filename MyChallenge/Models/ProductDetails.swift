@@ -15,9 +15,9 @@ struct ProductDetailsResponse: Codable {
     let data: ProductDetails
 
     enum CodingKeys: String, CodingKey {
-        case status
-        case success
-        case data
+        case status = "status"
+        case success = "success"
+        case data = "data"
     }
 }
 
@@ -48,29 +48,29 @@ struct ProductDetails: Codable {
     let currency: String
 
     enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case description
-        case url
-        case promotionTitle
-        case subtitle
-        case type
-        case status
-        case price
-        case baseCurrencyPrice
-        case salePrice
-        case regularPrice
-        case startingPrice
-        case quantity
-        case maxQuantity
-        case isTaxable
-        case hasReadMore
-        case isOnSale
-        case isAvailable
-        case isOutOfStock
-        case isRequireShipping
-        case image
-        case currency
+        case id = "id"
+        case name = "name"
+        case description = "description"
+        case url = "url"
+        case promotionTitle = "promotion_title"
+        case subtitle = "subtitle"
+        case type = "type"
+        case status = "status"
+        case price = "price"
+        case baseCurrencyPrice = "base_currency_price"
+        case salePrice = "sale_price"
+        case regularPrice = "regular_price"
+        case startingPrice = "starting_price"
+        case quantity = "quantity"
+        case maxQuantity = "max_quantity"
+        case isTaxable = "is_taxable"
+        case hasReadMore = "has_read_more"
+        case isOnSale = "is_on_sale"
+        case isAvailable = "is_available"
+        case isOutOfStock = "is_out_of_stock"
+        case isRequireShipping = "is_require_shipping"
+        case image = "image"
+        case currency = "currency"
     }
 }
 
@@ -80,8 +80,8 @@ struct BaseCurrencyPrice: Codable {
     let amount: Int
 
     enum CodingKeys: String, CodingKey {
-        case currency
-        case amount
+        case currency = "currency"
+        case amount = "amount"
     }
 }
 
@@ -91,7 +91,7 @@ struct ImageProduct: Codable {
     let alt: String
 
     enum CodingKeys: String, CodingKey {
-        case url
-        case alt
+        case url = "url"
+        case alt = "alt"
     }
 }
