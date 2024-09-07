@@ -38,6 +38,13 @@ struct ProductCardView: View {
                             .fill(Color.white)
                             .frame(width: 150)
                             .padding(.vertical, 5)
+                            .overlay(alignment: .center) {
+                                Image(.no)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 60, height: 60)
+                                    .foregroundStyle(appColor.colorFromARGB())
+                            }
                     }
                     
                     Spacer()
@@ -48,16 +55,18 @@ struct ProductCardView: View {
                             .foregroundColor(appColor.colorFromARGB())
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding(.horizontal, 10)
+                            .lineLimit(1)
                         
                         Text(subtitle)
                             .applyDynamicFont(size: 12)
                             .foregroundColor(appColor.colorFromARGB().opacity(0.5))
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding(.horizontal, 10)
+                            .lineLimit(1)
+
                         
-                        
-                        
-                        Text("SAR \(price)")
+
+                        Text("SAR \(price.priceWithTwoDecimal())")
                             .applyDynamicFont(size: 12)
                             .foregroundColor(appColor.colorFromARGB().opacity(0.7))
                             .frame(maxWidth: .infinity ,alignment: .trailing)
@@ -108,24 +117,3 @@ struct ProductCardView: View {
                     offer: "تخفيض")
 }
 
-struct OfferView: View {
-    let title: String
-    let color: Color
-    var fontSize: CGFloat = 12
-    let size: CGSize
-
-    var body: some View {
-        Group {
-            Rectangle()
-                .fill(color)
-                .frame(width: size.width, height: size.height)
-
-            Text(title)
-                .foregroundColor(.white)
-                .applyDynamicFont(size: fontSize)
-                .lineLimit(1)
-                .frame(width: 100)
-        }
-        .rotationEffect(Angle(degrees: -45))
-    }
-}

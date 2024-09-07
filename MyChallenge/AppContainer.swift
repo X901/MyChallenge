@@ -29,15 +29,22 @@ class AppContainer {
             SallaRepositoryIml(networkService: r.resolve(NetworkServiceProtocol.self)!)
         }
 
-        // Register Use Case
         container.register(FetchBrandDetailsUseCase.self) { r in
             FetchBrandDetailsUseCase(repository: r.resolve(SallaRepository.self)!)
         }
+        
+        container.register(FetchProductDetailsUseCase.self) { r in
+            FetchProductDetailsUseCase(repository: r.resolve(SallaRepository.self)!)
+        }
 
-        // Keep the ViewModel registration synchronous
         container.register(BrandDetailsViewModel.self) { r in
             BrandDetailsViewModel(fetchBrandDetailsUseCase: r.resolve(FetchBrandDetailsUseCase.self)!)
         }
+        
+        container.register(ProductDetailsViewModel.self) { r in
+            ProductDetailsViewModel(fetchProductDetailsUseCase: r.resolve(FetchProductDetailsUseCase.self)!)
+        }
+
     }
 }
 

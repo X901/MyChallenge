@@ -10,6 +10,8 @@ import Foundation
 
 protocol SallaRepository {
     func fetchBrandProducts(pageURL: String?) async throws -> BrandDetails
+    func fetchProductDetails(id: String) async throws -> ProductDetails
+
 }
 
 class SallaRepositoryIml: SallaRepository {
@@ -20,7 +22,11 @@ class SallaRepositoryIml: SallaRepository {
     }
     
     func fetchBrandProducts(pageURL: String?) async throws -> BrandDetails {
-        return try await networkService.fetchBrandProduct(pageURL: pageURL)
+        return try await networkService.fetchBrandProducts(pageURL: pageURL)
+    }
+    
+    func fetchProductDetails(id: String) async throws -> ProductDetails {
+        return try await networkService.fetchProductDetails(id: id)
     }
     
 }

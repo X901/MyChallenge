@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class FetchProductDetailsUseCase {
+    private let repository: SallaRepository
+    
+    init(repository: SallaRepository) {
+        self.repository = repository
+    }
+    
+    func execute(id: String) async throws -> ProductDetails {
+        let productDetails = try await repository.fetchProductDetails(id: id)
+  
+            return productDetails
+
+    }
+}

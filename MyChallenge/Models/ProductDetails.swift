@@ -9,10 +9,10 @@
 import Foundation
 
 // MARK: - ProductDetailsResponse
-struct ProductDetailsResponse: Codable {
+struct ProductDetails: Codable {
     let status: Int
     let success: Bool
-    let data: ProductDetails
+    let data: ProductDetailsData
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -21,31 +21,40 @@ struct ProductDetailsResponse: Codable {
     }
 }
 
-// MARK: - DataClass
-struct ProductDetails: Codable {
+struct ProductDetailsData: Codable {
     let id: Int
-    let name: String
-    let description: String
-    let url: String
-    let promotionTitle: String
-    let subtitle: String
-    let type: String
-    let status: String
-    let price: Int
+    let name: String?
+    let description: String?
+    let url: String?
+    let promotionTitle: String?
+    let subtitle: String?
+    let type: String?
+    let status: String?
+    let price: Double?
     let baseCurrencyPrice: BaseCurrencyPrice
-    let salePrice: Int
-    let regularPrice: Int
-    let startingPrice: Int
-    let quantity: Int
-    let maxQuantity: Int
-    let isTaxable: Bool
-    let hasReadMore: Bool
-    let isOnSale: Bool
-    let isAvailable: Bool
-    let isOutOfStock: Bool
-    let isRequireShipping: Bool
+    let salePrice: Double?
+    let regularPrice: Double?
+    let startingPrice: Double?
+    let quantity: Int?
+    let maxQuantity: Int?
+    let isTaxable: Bool?
+    let hasReadMore: Bool?
+    let isOnSale: Bool?
+    let isAvailable: Bool?
+    let isOutOfStock: Bool?
+    let isRequireShipping: Bool?
     let image: ImageProduct
-    let currency: String
+    let currency: String?
+    let sku: String?
+    let discountEnds: String?
+    let canAddNote: Bool?
+    let canShowRemainedQuantity: Bool?
+    let canUploadFile: Bool?
+    let hasCustomForm: Bool?
+    let hasMetadata: Bool?
+    let isHiddenQuantity: Bool?
+    let weight: String?
+    let calories: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -71,13 +80,22 @@ struct ProductDetails: Codable {
         case isRequireShipping = "is_require_shipping"
         case image = "image"
         case currency = "currency"
+        case sku = "sku"
+        case discountEnds = "discount_ends"
+        case canAddNote = "can_add_note"
+        case canShowRemainedQuantity = "can_show_remained_quantity"
+        case canUploadFile = "can_upload_file"
+        case hasCustomForm = "has_custom_form"
+        case hasMetadata = "has_metadata"
+        case isHiddenQuantity = "is_hidden_quantity"
+        case weight = "weight"
+        case calories = "calories"
     }
 }
 
-// MARK: - BaseCurrencyPrice
 struct BaseCurrencyPrice: Codable {
-    let currency: String
-    let amount: Int
+    let currency: String?
+    let amount: Double?
 
     enum CodingKeys: String, CodingKey {
         case currency = "currency"
@@ -85,10 +103,9 @@ struct BaseCurrencyPrice: Codable {
     }
 }
 
-// MARK: - Image
 struct ImageProduct: Codable {
-    let url: String
-    let alt: String
+    let url: String?
+    let alt: String?
 
     enum CodingKeys: String, CodingKey {
         case url = "url"

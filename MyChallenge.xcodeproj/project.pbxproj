@@ -33,6 +33,12 @@
 		FD7EDF042C8B1F0B00050241 /* DeveloperAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF032C8B1F0B00050241 /* DeveloperAppConfig.swift */; };
 		FD7EDF072C8B508C00050241 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF062C8B508C00050241 /* Color+Ext.swift */; };
 		FD7EDF0B2C8B555200050241 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FD7EDF0A2C8B555200050241 /* Kingfisher */; };
+		FD7EDF0D2C8C73DD00050241 /* OfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF0C2C8C73DD00050241 /* OfferView.swift */; };
+		FD7EDF102C8C783100050241 /* CustomErrorServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF0F2C8C783100050241 /* CustomErrorServer.swift */; };
+		FD7EDF122C8CAA2E00050241 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF112C8CAA2E00050241 /* Double+Ext.swift */; };
+		FD7EDF142C8CAE3300050241 /* FetchProductDetailsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF132C8CAE3300050241 /* FetchProductDetailsUseCaseTests.swift */; };
+		FD7EDF172C8CAE7700050241 /* MockSallaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF162C8CAE7700050241 /* MockSallaRepository.swift */; };
+		FD7EDF192C8CAF1A00050241 /* DeveloperAppConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EDF182C8CAF1A00050241 /* DeveloperAppConfigRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		FD7EDF012C8B1EAC00050241 /* DeveloperAppConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperAppConfigRepository.swift; sourceTree = "<group>"; };
 		FD7EDF032C8B1F0B00050241 /* DeveloperAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperAppConfig.swift; sourceTree = "<group>"; };
 		FD7EDF062C8B508C00050241 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		FD7EDF0C2C8C73DD00050241 /* OfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferView.swift; sourceTree = "<group>"; };
+		FD7EDF0F2C8C783100050241 /* CustomErrorServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorServer.swift; sourceTree = "<group>"; };
+		FD7EDF112C8CAA2E00050241 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		FD7EDF132C8CAE3300050241 /* FetchProductDetailsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductDetailsUseCaseTests.swift; sourceTree = "<group>"; };
+		FD7EDF162C8CAE7700050241 /* MockSallaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSallaRepository.swift; sourceTree = "<group>"; };
+		FD7EDF182C8CAF1A00050241 /* DeveloperAppConfigRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperAppConfigRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +153,10 @@
 		FD7EDE9B2C8A091D00050241 /* MyChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD7EDF152C8CAE6D00050241 /* Mock */,
 				FD7EDE9C2C8A091D00050241 /* FetchBrandDetailsUseCaseTests.swift */,
+				FD7EDF132C8CAE3300050241 /* FetchProductDetailsUseCaseTests.swift */,
+				FD7EDF182C8CAF1A00050241 /* DeveloperAppConfigRepositoryTests.swift */,
 			);
 			path = MyChallengeTests;
 			sourceTree = "<group>";
@@ -151,6 +166,7 @@
 			children = (
 				FD7EDEC92C8A105800050241 /* BrandDetails.swift */,
 				FD7EDECB2C8A19CA00050241 /* ProductDetails.swift */,
+				FD7EDF0F2C8C783100050241 /* CustomErrorServer.swift */,
 				FD7EDF032C8B1F0B00050241 /* DeveloperAppConfig.swift */,
 			);
 			path = Models;
@@ -197,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				FD7EDEDF2C8A26DC00050241 /* BrandDetailsView.swift */,
-				FD7EDEF72C8B09FB00050241 /* ProductCardView.swift */,
 				FD7EDEE12C8A26F200050241 /* ProductDetailsView.swift */,
+				FD7EDF0E2C8C73F000050241 /* Sub Views */,
 				FD7EDEF12C8A301A00050241 /* Util */,
 			);
 			path = Views;
@@ -237,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7EDF062C8B508C00050241 /* Color+Ext.swift */,
+				FD7EDF112C8CAA2E00050241 /* Double+Ext.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -246,6 +263,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD7EDF0E2C8C73F000050241 /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD7EDEF72C8B09FB00050241 /* ProductCardView.swift */,
+				FD7EDF0C2C8C73DD00050241 /* OfferView.swift */,
+			);
+			path = "Sub Views";
+			sourceTree = "<group>";
+		};
+		FD7EDF152C8CAE6D00050241 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FD7EDF162C8CAE7700050241 /* MockSallaRepository.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +395,7 @@
 			files = (
 				FD7EDECF2C8A219700050241 /* NetworkService.swift in Sources */,
 				FD7EDEDC2C8A264500050241 /* ProductDetailsViewModel.swift in Sources */,
+				FD7EDF0D2C8C73DD00050241 /* OfferView.swift in Sources */,
 				FD7EDF022C8B1EAC00050241 /* DeveloperAppConfigRepository.swift in Sources */,
 				FD7EDECA2C8A105800050241 /* BrandDetails.swift in Sources */,
 				FD7EDED62C8A251700050241 /* FetchProductDetailsUseCase.swift in Sources */,
@@ -369,9 +404,11 @@
 				FD7EDEF42C8A304300050241 /* Font+Modifier.swift in Sources */,
 				FD7EDEE42C8A271600050241 /* AppContainer.swift in Sources */,
 				FD7EDEF62C8A4A7200050241 /* CornerRadius+Modifier.swift in Sources */,
+				FD7EDF122C8CAA2E00050241 /* Double+Ext.swift in Sources */,
 				FD7EDEE22C8A26F200050241 /* ProductDetailsView.swift in Sources */,
 				FD7EDF072C8B508C00050241 /* Color+Ext.swift in Sources */,
 				FD7EDEF82C8B09FB00050241 /* ProductCardView.swift in Sources */,
+				FD7EDF102C8C783100050241 /* CustomErrorServer.swift in Sources */,
 				FD7EDEE02C8A26DC00050241 /* BrandDetailsView.swift in Sources */,
 				FD7EDEDA2C8A262B00050241 /* BrandDetailsViewModel.swift in Sources */,
 				FD7EDED42C8A24EB00050241 /* FetchBrandDetailsUseCase.swift in Sources */,
@@ -385,6 +422,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD7EDE9D2C8A091D00050241 /* FetchBrandDetailsUseCaseTests.swift in Sources */,
+				FD7EDF142C8CAE3300050241 /* FetchProductDetailsUseCaseTests.swift in Sources */,
+				FD7EDF172C8CAE7700050241 /* MockSallaRepository.swift in Sources */,
+				FD7EDF192C8CAF1A00050241 /* DeveloperAppConfigRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,6 @@ class FetchBrandDetailsUseCaseTests: XCTestCase {
     }
 
     override func tearDown() {
-        mockRepository = nil
         useCase = nil
         super.tearDown()
     }
@@ -71,18 +70,4 @@ class FetchBrandDetailsUseCaseTests: XCTestCase {
         XCTAssertEqual(result.nextPageURL, "nextPageURL")
     }
     
-}
-
-class MockSallaRepository: SallaRepository {
-    var productsToReturn: [BrandDetailsData] = []
-    var nextPageURLToReturn: String? = nil
-
-    func fetchBrandProducts(pageURL: String?) async throws -> BrandDetails {
-        return BrandDetails(
-            status: 200,
-            success: true,
-            data: productsToReturn,
-            cursor: Cursor(current: "currentPageURL", next: nextPageURLToReturn)
-        )
-    }
 }

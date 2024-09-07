@@ -45,7 +45,7 @@ class BrandDetailsViewModel: ObservableObject {
                 self.isLoading = false
                 
             } catch {
-                self.errorMessage = "Faild to load Brand Products: \(error)"
+                self.errorMessage = error.localizedDescription
                 self.isLoading = false
                 self.displayErrorAlert = true
             }

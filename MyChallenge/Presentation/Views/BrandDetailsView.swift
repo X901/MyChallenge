@@ -41,11 +41,14 @@ struct BrandDetailsView: View {
                         } else {
                             LazyVGrid(columns: columns, spacing: 16) {
                                 ForEach(viewModel.products, id: \.id) { product in
-                                    ProductCardView(imageUrl: product.image.url,
-                                                    title: product.name ?? "",
-                                                    subtitle: product.promotionTitle,
-                                                    price: product.price ?? 0.0,
-                                                    offer: product.promotionTitle)
+                                    NavigationLink(destination: ProductDetailsView(id: product.id)) {
+                                        ProductCardView(imageUrl: product.image.url,
+                                                        title: product.name ?? "",
+                                                        subtitle: product.promotionTitle,
+                                                        price: product.price ?? 0.0,
+                                                        offer: product.promotionTitle)
+
+                                    }
                                     .task {
                                       await  viewModel.loadNextPage(currentPeoduct: product)
                                     }
