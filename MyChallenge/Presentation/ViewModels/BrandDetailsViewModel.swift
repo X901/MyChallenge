@@ -60,4 +60,13 @@ class BrandDetailsViewModel: ObservableObject {
             }
         }
     }
+    
+    @MainActor
+    func pullToRefresh() async {
+        products.removeAll()
+        errorMessage = nil
+        displayErrorAlert = false
+        
+        await loadBrandProducts()
+    }
 }
