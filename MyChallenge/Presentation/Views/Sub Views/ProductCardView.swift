@@ -31,7 +31,7 @@ struct ProductCardView: View {
                         KFImage(URL(string: imageUrl)!)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 150)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding(.vertical, 5)
                     } else {
                         Rectangle()
@@ -44,6 +44,7 @@ struct ProductCardView: View {
                                     .scaledToFit()
                                     .frame(width: 60, height: 60)
                                     .foregroundStyle(appColor.colorFromARGB())
+                                
                             }
                     }
                     

@@ -21,6 +21,7 @@ struct BrandDetailsView: View {
             ScrollView {
                 VStack {
                     
+                    // I see this in the design but not on API response, so I add it as local image
                     Image(.header)
                         .resizable()
                         .scaledToFit()

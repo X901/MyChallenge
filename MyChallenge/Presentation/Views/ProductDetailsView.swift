@@ -67,7 +67,7 @@ struct ProductDetailsView: View {
                                 KFImage(URL(string: imageUrl)!)
                                     .resizable()
                                     .scaledToFit()
-                                    .padding(30)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     .padding(.vertical, 5)
                             } else {
                                 Rectangle()
