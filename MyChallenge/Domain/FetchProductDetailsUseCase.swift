@@ -16,9 +16,6 @@ class FetchProductDetailsUseCase {
     }
     
     func execute(id: String) async throws -> ProductDetails {
-        let productDetails = try await repository.fetchProductDetails(id: id)
-  
-            return productDetails
-
+        return try await repository.fetchProductDetails(id: id)
     }
 }

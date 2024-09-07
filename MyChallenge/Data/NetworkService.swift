@@ -77,12 +77,6 @@ class NetworkService: NetworkServiceProtocol {
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw URLError(.badServerResponse)
         }
-
-        if let responseString = String(data: data, encoding: .utf8) {
-               print("Response as String: \(responseString)")  // Log or display this string
-           } else {
-               print("Unable to convert response to String")
-           }
         
         if httpResponse.statusCode == 200 {
             return try JSONDecoder().decode(ProductDetails.self, from: data)

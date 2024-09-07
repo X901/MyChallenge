@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import RealmSwift
 
 class AppContainer {
     static let shared = AppContainer()
@@ -18,15 +19,23 @@ class AppContainer {
         container = Container()
 
         container.register(DeveloperAppConfigRepository.self) { _ in
-                  LocalAppConfigRepository()
-              }
+            LocalAppConfigRepository()
+        }
+
         container.register(NetworkServiceProtocol.self) { r in
             let configRepository = r.resolve(DeveloperAppConfigRepository.self)!
             return NetworkService(configRepository: configRepository)
         }
 
+        container.register(RealmRepository.self) { _ in
+            return RealmRepositoryImpl()
+        }
+
         container.register(SallaRepository.self) { r in
-            SallaRepositoryIml(networkService: r.resolve(NetworkServiceProtocol.self)!)
+            SallaRepositoryImpl(
+                networkService: r.resolve(NetworkServiceProtocol.self)!,
+                realmRepository: r.resolve(RealmRepository.self)!
+            )
         }
 
         container.register(FetchBrandDetailsUseCase.self) { r in
@@ -44,7 +53,6 @@ class AppContainer {
         container.register(ProductDetailsViewModel.self) { r in
             ProductDetailsViewModel(fetchProductDetailsUseCase: r.resolve(FetchProductDetailsUseCase.self)!)
         }
-
     }
 }
 

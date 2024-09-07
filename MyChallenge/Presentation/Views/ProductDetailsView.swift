@@ -22,12 +22,13 @@ struct ProductDetailsView: View {
     
     var body: some View {
         Group {
+            
             if viewModel.isLoading && viewModel.product == nil {
                 ProgressView("Loading...")
+                
             } else {
                 VStack(spacing: 0) {
-                    
-                    
+ 
                     Rectangle()
                         .fill(Color.white)
                         .frame(height: 60)
@@ -40,7 +41,6 @@ struct ProductDetailsView: View {
                                     Image(systemName: "chevron.backward")
                                         .imageScale(.large)
                                         .foregroundStyle(appColor.colorFromARGB())
-
                                 }
                                 
                                 Spacer()
@@ -50,12 +50,10 @@ struct ProductDetailsView: View {
                              
                                 Spacer()
                                 
-                                // This a trick to make text on center, that why it's hidden
+                                // This's a trick to make text on center, that why it's hidden
                                 Image(systemName: "chevron.backward")
                                     .imageScale(.large)
                                     .hidden()
-
-
                             }
                             .padding()
                         }
@@ -106,11 +104,13 @@ struct ProductDetailsView: View {
                     }
                     
                     .overlay(alignment: .topLeading) {
-                        OfferView(title: "عرض لايقاوم",
-                                  color: appColor.colorFromARGB(),
-                                  fontSize: 20,
-                                  size: CGSize(width: 250, height: 45))
-                        .offset(x: -55, y: 50)
+                        if let promotionTitle = viewModel.product?.promotionTitle {
+                            OfferView(title: promotionTitle,
+                                      color: appColor.colorFromARGB(),
+                                      fontSize: 20,
+                                      size: CGSize(width: 250, height: 45))
+                            .offset(x: -55, y: 50)
+                        }
                     }
                     .clipped()
                     .ignoresSafeArea()
@@ -125,7 +125,6 @@ struct ProductDetailsView: View {
                                dismissButton: .default(Text("OK"))
                            )
                        }
-
             }
         }
         .navigationBarTitleDisplayMode(.inline)
