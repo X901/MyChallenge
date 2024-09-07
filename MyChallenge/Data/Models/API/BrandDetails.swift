@@ -39,7 +39,7 @@ struct Cursor: Codable {
     }
     
     // I notice `current` sometime it's (Int) other time is (String)
-    // This code check try to decode as String, if it can't decode it will try Ont then Duble after that converted it to String
+    // This code check try to decode as String, if it can't decode it will try Int then Double after that converted it to String
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 

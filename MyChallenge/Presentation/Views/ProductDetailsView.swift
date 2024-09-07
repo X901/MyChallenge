@@ -152,7 +152,7 @@ struct ProductDetailsView: View {
                     }
                 
             }
-            .offset(y: -80)
+            .offset(y: -100)
             .padding(.leading, 30)
             
             
@@ -172,7 +172,7 @@ struct ProductDetailsView: View {
                     }
                 
             }
-            .offset(y: -80)
+            .offset(y: -100)
             .padding(.leading)
             
         }
