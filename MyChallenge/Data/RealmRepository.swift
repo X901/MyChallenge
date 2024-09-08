@@ -87,6 +87,7 @@ class RealmRepositoryImpl: RealmRepository {
             return BrandDetailsData(
                 id: realmProduct.id,
                 name: realmProduct.name,
+                subtitle: realmProduct.subtitle,
                 description: realmProduct.description,
                 url: realmProduct.url,
                 promotionTitle: realmProduct.promotionTitle,

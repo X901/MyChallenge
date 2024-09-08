@@ -61,6 +61,7 @@ struct Cursor: Codable {
 struct BrandDetailsData: Codable {
     let id: String
     let name: String?
+    let subtitle: String?
     let description: String?
     let url: String?
     let promotionTitle: String
@@ -89,6 +90,7 @@ struct BrandDetailsData: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
+        case subtitle = "subtitle"
         case description = "description"
         case url = "url"
         case promotionTitle = "promotion_title"

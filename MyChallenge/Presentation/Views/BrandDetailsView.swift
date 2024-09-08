@@ -48,7 +48,7 @@ struct BrandDetailsView: View {
                                         NavigationLink(destination: ProductDetailsView(id: product.id)) {
                                             ProductCardView(imageUrl: product.image.url,
                                                             title: product.name ?? "",
-                                                            subtitle: product.promotionTitle,
+                                                            subtitle: product.subtitle ?? "",
                                                             price: product.price ?? 0.0,
                                                             offer: product.promotionTitle)
                                             

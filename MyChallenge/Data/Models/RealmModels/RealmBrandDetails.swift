@@ -19,6 +19,7 @@ class RealmBrandDetails: Object {
 class RealmBrandDetailsData: Object {
     @Persisted(primaryKey: true) var id: String = ""
     @Persisted var name: String?
+    @Persisted var subtitle: String?
     @Persisted var descriptionText: String?
     @Persisted var url: String?
     @Persisted var promotionTitle: String = ""

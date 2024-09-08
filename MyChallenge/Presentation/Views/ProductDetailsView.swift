@@ -185,7 +185,7 @@ struct ProductDetailsView: View {
                 .applyDynamicFont(size: 25)
                 .foregroundStyle(appColor.colorFromARGB())
             
-            Text(viewModel.product?.promotionTitle ?? "")
+            Text(viewModel.product?.subtitle ?? "")
                 .applyDynamicFont(size: 18)
                 .foregroundStyle(appColor.colorFromARGB().opacity(0.6))
             
