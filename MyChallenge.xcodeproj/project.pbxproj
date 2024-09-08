@@ -47,6 +47,7 @@
 		FD7EDF2B2C8CC24F00050241 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD7EDF2A2C8CC24F00050241 /* RealmSwift */; };
 		FD7EDF2C2C8CC24F00050241 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FD7EDF2A2C8CC24F00050241 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FD7EDF302C8E083F00050241 /* NavigationBackport in Frameworks */ = {isa = PBXBuildFile; productRef = FD7EDF2F2C8E083F00050241 /* NavigationBackport */; };
+		FD7EDF312C8E130000050241 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FD7EDF1D2C8CB3D600050241 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FD7EDF2C2C8CC24F00050241 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7EDF322C8E130000050241 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD7EDF312C8E130000050241 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +361,7 @@
 				FD7EDE842C8A091B00050241 /* Sources */,
 				FD7EDE852C8A091B00050241 /* Frameworks */,
 				FD7EDE862C8A091B00050241 /* Resources */,
+				FD7EDF322C8E130000050241 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
