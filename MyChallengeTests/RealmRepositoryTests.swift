@@ -29,7 +29,8 @@ class RealmRepositoryTests: XCTestCase {
               }
               
                private func getRealm() throws -> Realm {
-                  return try Realm(configuration: testConfiguration)
+                   let realm = try Realm(configuration: testConfiguration)
+                   return realm
               }
           }
           
@@ -37,6 +38,7 @@ class RealmRepositoryTests: XCTestCase {
       }
 
       override func tearDownWithError() throws {
+          
           realmRepositoryImpl = nil
           try super.tearDownWithError()
       }
@@ -47,7 +49,7 @@ class RealmRepositoryTests: XCTestCase {
             status: 200,
             success: true,
             data: [
-                BrandDetailsData(id: "1", name: "Test Brand", description: "Test Description", url: "https://test.com", promotionTitle: "Test Promo", type: "Test Type", status: "active", calories: 100, soldQuantity: 50, isTaxable: true, category: nil, image: ImageObject(url: "https://test.com/image.jpg"), brand: nil, tags: [], isOnSale: false, isAvailable: true, isOutOfStock: false, isRequireShipping: true, regularPrice: 100.0, price: 90.0, salePrice: nil, startingPrice: nil, currency: "USD", hasOptions: false, pinned: false, sku: "TEST123")
+                BrandDetailsData(id: "1", name: "Test Brand", subtitle: "", description: "Test Description", url: "https://test.com", promotionTitle: "Test Promo", type: "Test Type", status: "active", calories: 100, soldQuantity: 50, isTaxable: true, category: nil, image: ImageObject(url: "https://test.com/image.jpg"), brand: nil, tags: [], isOnSale: false, isAvailable: true, isOutOfStock: false, isRequireShipping: true, regularPrice: 100.0, price: 90.0, salePrice: nil, startingPrice: nil, currency: "USD", hasOptions: false, pinned: false, sku: "TEST123")
             ],
             cursor: Cursor(current: "1", next: "2")
         )

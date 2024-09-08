@@ -10,17 +10,18 @@ import SwiftUI
 
 struct BrandDetailsView: View {
     @StateObject var viewModel: BrandDetailsViewModel = AppContainer.shared.container.resolve(BrandDetailsViewModel.self)!
-
+    
     let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
     @AppStorage("fontFamily") var fontFamily: String = ""
+    
+    let onProductSelected: (String) -> Void
 
     var body: some View {
         
-        NavigationView {
             ZStack {
                 Color.gray.opacity(0.1).ignoresSafeArea()
-
+                
                 ScrollView {
                     VStack {
                         
@@ -45,16 +46,18 @@ struct BrandDetailsView: View {
                             } else {
                                 LazyVGrid(columns: columns, spacing: 16) {
                                     ForEach(viewModel.products, id: \.id) { product in
-                                        NavigationLink(destination: ProductDetailsView(id: product.id)) {
-                                            ProductCardView(imageUrl: product.image.url,
-                                                            title: product.name ?? "",
-                                                            subtitle: product.subtitle ?? "",
-                                                            price: product.price ?? 0.0,
-                                                            offer: product.promotionTitle)
-                                            
+                                        
+                                        
+                                        ProductCardView(imageUrl: product.image.url,
+                                                        title: product.name ?? "",
+                                                        subtitle: product.subtitle ?? "",
+                                                        price: product.price ?? 0.0,
+                                                        offer: product.promotionTitle)
+                                        .onTapGesture {
+                                            onProductSelected(product.id)
                                         }
                                         .task {
-                                            await  viewModel.loadNextPage(currentPeoduct: product)
+                                            await viewModel.loadNextPage(currentPeoduct: product)
                                         }
                                         
                                     }
@@ -84,18 +87,16 @@ struct BrandDetailsView: View {
                 }
             }
             .alert(isPresented: $viewModel.displayErrorAlert) {
-                       Alert(
-                           title: Text("Error"),
-                           message: Text(viewModel.errorMessage ?? "unknown error."),
-                           dismissButton: .default(Text("OK"))
-                       )
-                   }
-          
-            
-        }
+                Alert(
+                    title: Text("Error"),
+                    message: Text(viewModel.errorMessage ?? "unknown error."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+
     }
 }
 
-#Preview {
-    BrandDetailsView()
+#Preview {    
+    BrandDetailsView(onProductSelected: { _ in })
 }

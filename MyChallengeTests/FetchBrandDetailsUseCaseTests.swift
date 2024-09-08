@@ -31,6 +31,7 @@ class FetchBrandDetailsUseCaseTests: XCTestCase {
         let mockProduct = BrandDetailsData(
             id: "1",
             name: "Mock Product",
+            subtitle: "",
             description: nil,
             url: nil,
             promotionTitle: "Promotion",

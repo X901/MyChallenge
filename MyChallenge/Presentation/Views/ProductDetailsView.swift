@@ -16,10 +16,10 @@ struct ProductDetailsView: View {
     @AppStorage("appColor") private var appColor: Int = 0
     @AppStorage("fontFamily") private var fontFamily: String = ""
     
-    @Environment(\.dismiss) private var dismiss
-
     @StateObject private var viewModel: ProductDetailsViewModel = AppContainer.shared.container.resolve(ProductDetailsViewModel.self)!
     
+    let onBack: () -> Void
+
     var body: some View {
         Group {
             
@@ -36,7 +36,7 @@ struct ProductDetailsView: View {
                         .overlay {
                             HStack {
                                 Button {
-                                    dismiss()
+                                    onBack()
                                 } label: {
                                     Image(systemName: "chevron.backward")
                                         .imageScale(.large)
@@ -201,5 +201,5 @@ struct ProductDetailsView: View {
 }
 
 #Preview {
-    ProductDetailsView(id: "599203108")
+    ProductDetailsView(id: "599203108", onBack: {})
 }

@@ -21,8 +21,11 @@ class RealmRepositoryImpl: RealmRepository {
         
         init() {
             configuration = Realm.Configuration(
-                schemaVersion: 1,
+                schemaVersion: 2,
                 migrationBlock: { migration, oldSchemaVersion in
+                    migration.enumerateObjects(ofType: RealmProductDetails.className()) { oldObject, newObject in
+                        newObject?["subtitle"] = oldObject?["subtitle"] ?? ""
+                    }
                 }
             )
         }
